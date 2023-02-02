@@ -1,8 +1,12 @@
-# Ejemplo # - Nombre del ejemplo
+# Ejemplo # - Primer DAG con Airflow
 
 ## Objetivo
 
-* Agregar los objetivos del ejemplo (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+- Escribir tu primer DAG
+- Activar de un DAG
+- Ejecutar de un DAG
+- Utilizar un operador Bash
+- Revisión de logs
 
 ## Desarrollo
 
