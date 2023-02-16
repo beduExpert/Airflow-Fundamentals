@@ -53,4 +53,3 @@ Aquí hay un tutorial para instalar Docker Compose con Brew en Ubuntu 22.04 LTS,
     ```
 
 10. Si se muestra una salida que contiene información sobre la configuración, entonces Docker Compose está funcionando correctamente en tu sistema Ubuntu.
-
