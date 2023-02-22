@@ -1,8 +1,9 @@
-# Ejemplo # - Nombre del ejemplo
+# Ejemplo # - Fotografía astronómica del día (APOD por sus siglas en inglés)
 
 ## Objetivo
 
-* Agregar los objetivos del ejemplo (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Crear una tarea que obtenga metadatos de fuentes externas usando un comanndo BASH
+* Crear una tarea que lea 
 
 ## Desarrollo
 
