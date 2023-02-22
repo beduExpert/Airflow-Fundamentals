@@ -57,9 +57,9 @@ Utilizaremos la última imagen de Docker oficial disponible en el [repositorio](
 
 Si no cuentas con Docker Desktop puedes seguir cualquiera de las siguientes guías de instalación dependiendo de tu Sistema Operativo:
 
-- [osx](os.md)
-- [ubuntu](ubuntu.md)
-- [windows](windows.md)
+- [osx](assets/osx.md)
+- [ubuntu](assets/ubuntu.md)
+- [windows](assets/windows.md)
 
 ## Desarrollo
 
