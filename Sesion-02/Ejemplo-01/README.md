@@ -1,5 +1,7 @@
 # Ejemplo 01 - Fotografía astronómica del día (APOD por sus siglas en inglés)
 
+
+![graph view](assets/img/graph_view.png)
 ## Objetivo
 
 * Crear una tarea que obtenga metadatos de fuentes externas usando un comanndo BASH

@@ -1,11 +1,13 @@
 # Ejemplo 1 - Hola mundo
 
+![grap view](assets/img/graph_view.png)
+
 ## Objetivo
 
-- Conocer la estructura básica de un DAG a través de un ejemplo básico que imprime la fecha
+- Conocer la estructura básica de un DAG a través de un ejemplo sencillo que imprime la fecha actual
 - Utilizar VS Code para crear el archivo DAG `hola_mundo.py` y familiarizarse con el flujo de trabajo
 - Activar y ejecutar un DAG
-- Consultar los resultados de ejecución del DAG
+- Consultar los resultados de ejecución del DAG a través del log
 
 ## Desarrollo
 

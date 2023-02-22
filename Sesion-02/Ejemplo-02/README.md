@@ -2,6 +2,8 @@
 
 En este ejemplo vamos a crear un DAG utilzar la API pública [Weather Forecast API](https://open-meteo.com/en/docs#latitude=19.43&longitude=-99.13&hourly=temperature_2m) para obtener la predicción la temperatura de los siguientes 6 días en la Ciudad de México.
 
+![grap view](assets/img/graph_view.png)
+
 ## Objetivo
 
 * Crear una **tarea de flujo**  para consultar la temperatura actual y la de pasado mañana
