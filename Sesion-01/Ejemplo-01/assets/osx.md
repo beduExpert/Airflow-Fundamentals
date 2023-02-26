@@ -52,7 +52,7 @@ Si ya tienes instalado Homebrew sigue los pasos de instalación de Docker Compos
 
 1. Instalar [Visual Studio Code](https://code.visualstudio.com/download) (VS Code)
 2. Instalar [paquete de extension para Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-3. Instalar [paquete de extension para Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+3. Instalar [paquete de extension para Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 4. Instalar modulo de airflow, de preferencia en una ambiente virtual con Python 3.10
 
     ```bash
