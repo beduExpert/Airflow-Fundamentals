@@ -12,6 +12,13 @@
 
 Android Studio te ayudará a desarrollar tu app más productivamente a escala. Android Studio ofrece las herramientas más rápidas para crear apps de Android. Codifica más rápido. Codifica con seguridad. Crea el mejor código. Elimina tareas tediosas. Compila sin límites.
 
+| Version | Current Patch/Minor | State     | First Release | Limited Support | EOL/Terminated |
+|---------|---------------------|-----------|---------------|-----------------|----------------|
+| 2       | 2.5.1               | Supported | Dec 17, 2020  | TBD             | TBD            |
+| 1.10    | 1.10.15             | EOL       | Aug 27, 2018  | Dec 17, 2020    | June 17, 2021  |
+| 1.9     | 1.9.0               | EOL       | Jan 03, 2018  | Aug 27, 2018    | Aug 27, 2018   |
+| 1.8     | 1.8.2               | EOL       | Mar 19, 2017  | Jan 03, 2018    | Jan 03, 2018   |
+| 1.7     | 1.7.1.2             | EOL       | Mar 28, 2016  | Mar 19, 2017    | Mar 19, 2017   |
 ---
 
 <img src="images/tools.png" align="right" height="90"> 
