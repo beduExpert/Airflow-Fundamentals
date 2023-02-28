@@ -1,15 +1,23 @@
-# Reto # - Nombre del reto
+# Reto 1. Declaración alternativa de DAGs
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Familiarizarse con el proceso de creación archivos DAG
+* Aplicar el concepto de manejador de contexto en la creación de un DAG
+* Practicar el uso del decorador @dag para declarar un DAG
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Utiliza el código del dag [parte2_apod.py](Ejemplo-01/assets/dags/parte2_apod.py)
 
-Aquí se debe agregar el desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+Cambia la forma en que se declara el DAG usandon un manejador de contexto en su lugar y después repite el procedimiento con un decorador @dag.
 
+1. Crear un nuevo archivo DAG
+2. Declara el DAG con un nuevo nombre, `dag_id`
+3. Comprueba que no tienes errores de sintáxis
+4. Activa y ejecuta el DAG
+
+## Definición de Hecho
+
+1. Un archivo DAG que use el manejador de contexto ejecutado de manera exitosa en Airflow
+2. Un archivo DAG que use el decorador @dag ejecutado satisfactoriamente en Airflow

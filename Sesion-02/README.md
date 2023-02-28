@@ -18,7 +18,17 @@ Vamos a conectar cada uno de las temas de esta sesión en un sólo ejercicio a t
 
 Digamos que nos gustaría recopilar esas impresionantes fotografías del espacio que obtiene la NASA. Además de las fotografías también estamos interesados en obtener los metadatos de la misma: el título, la descripción, etc.
 
-API: [https://api.nasa.gov/](https://api.nasa.gov/)
+Utilizaremos una de las APIs abiertas de la NASA: [APOD](https://api.nasa.gov/).
+
+Uno de los sitios web más populares de la NASA es la [imagen astronómica del día](http://apod.nasa.gov/apod/astropix.html).
+
+La documentación completa de esta API se puede encontrar en el repositorio [Github de la API de APOD](https://github.com/nasa/apod-api).
+
+- No necesita autenticarse para explorar los datos de la NASA.
+- En los ejemplos utilizaremos la clave de API especial `DEMO_KEY`. Esta clave de API se puede usar para explorar inicialmente las API antes de registrarse, pero tiene límites de frecuencia mucho más bajos,
+  - Límite por hora: 30 solicitudes por dirección IP por hora
+  - Límite diario: 50 solicitudes por dirección IP por día
+
 
 ![apod](Ejemplo-01/assets/img/flujo_apod2.png)
 
@@ -52,7 +62,7 @@ Para definir este pipeline usaremos dos de los operadores que son parte del núc
 3. Este directorio debe contener el archivo `docker-compose.yaml` y las tres carpetas que creamos en la sesión anterior: `dags`, `plugins` y `logs`
 
 
-4. Dentro de VS Code, activamos la terminal **Ver > Terminal**
+4. Dentro de VS Code, activamos la terminal **View > Terminal**
 5. Activamos nuestro ambiente virtual con Python3.7 o Python3.10
 6. Instalamos el módulo de apache airflow si no lo hemos instalado antes
 
@@ -142,14 +152,7 @@ EmptyOperator(task_id='empty', dag=dag)
 [parte1_apod.py](Ejemplo-01/assets/dags/parte1_apod.py)
 
 ---
-### Reto 1. Declara un DAG a través de un manejador de contexto
-
-Cambia la forma en que se declara el DAG usandon un manejador de contexto en su lugar.
-
-1. Crear un nuevo archivo DAG
-2. Declara el DAG con un nuevo nombre, `dag_id`
-3. Comprueba que no tienes errores de sintáxis
-4. Activa y ejecuta el DAG
+### [Reto 1. Declaración alternativa de DAGs](Reto-01/README.md)
 
 ---
 
@@ -222,19 +225,7 @@ descarga_info = BashOperator(
 [parte2_apod.py](Ejemplo-01/assets/dags/parte2_apod.py)
 
 ---
-### Reto 2. ¿Cuál es la foto que corresponde al día de tu cumpleaños?
-
-La base de datos de APOD almacena todas la fotografías desde 1995, utiliza la [documentación disponible](https://api.nasa.gov/) para construir un comando bash que obtenga los datos de la fotografía que la NASA capturó el día de tu pasado cumpleaños.
-
-1. Crear un nuevo archivo DAG
-2. Declara el DAG con un nuevo nombre, `dag_id`
-3. Agrega un BashOperator
-4. Utiliza el comando `curl` correspondiente para descargar el archivo `JSON`
-5. Comprueba que no tienes errores de sintáxis
-6. Activa y ejecuta el DAG
-7. Comprueba que el campo `date` dentro del arhivo `JSON` corresponde al día de tu último cumpleaños
-
-> Sugerencia: Utiliza la terminal para probar tu comando `curl` antes de implementar el DAG
+### [Reto 2. Foto de cumpleaños](Reto-02/README.md)
 ---
 
 ### Paso 3. Uso del operador `PythonOperator`
@@ -317,21 +308,10 @@ descarga_info >> descarga_foto >> notifica
 ```
 
 ---
-### Reto 3. Definición de dependencias y calendarización
-
-Reescribir la dependencia entre tareas y programa el DAG para que se ejecute diariamente a las 7 am CST.
-
-1. Utiliza el archivo dag [basic_apod.py](Ejemplo-01/assets/dags/basic_apod.py)
-2. Comenta la línea que define las dependencias
-3. Define las dependencias utilizando cualquiera de las siguientes funciones: `chain`, `set_upstream` o `set_downstream`
-4. Verifica que la visualización del grafo siga siendo la misma después de tus cambios
-5. Modifica los parámetros del DAG y utiliza [crontab guru](https://crontab.guru/) para definir la expresión cron.
-
+### [Reto 3. Definición de dependencias y ejecución programada](Reto-03/README.md)
 ---
 
 
 ### 3. Postwork
 
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
-
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+- [**`POSTWORK SESIÓN 2`**](Postwork/README.md)
