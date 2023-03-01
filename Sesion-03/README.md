@@ -497,7 +497,9 @@ Para cargar datos de S3 a Redshift utilizaremos el operador `S3ToRedshiftOperato
 3. Crea un archivo DAG con estos bloques de código o copia la versión completa [redshift_copy.py](Ejemplo-01/assets/dags/redshift_copy.py).
 4. Activa y ejecuta el dag `redshift_copy`
 5. Explora la salida renderizada de dicha tarea
+
     ![image](Ejemplo-01/assets/img/rendered_copy_redshift.png)
+
 6. Revisa los mensajes del log para consultar el SQL generado. Ejemplo:
 
     ```sql
@@ -518,31 +520,25 @@ Para cargar datos de S3 a Redshift utilizaremos el operador `S3ToRedshiftOperato
 
 > **Nota 2**: Puedes usar la siguiente consulta en Redshift para encontrar posibles errores de carga
 
-    SELECT query_id,
-        table_id,
-        start_time,
-        trim(file_name) AS file_name, 
-        trim(column_name) AS column_name, 
-        trim(column_type) AS column_type, 
-        trim(error_message) AS error_message 
-    FROM sys_load_error_detail 
-    ORDER BY start_time  desc
-    LIMIT 10;
-        
+````sql
+SELECT query_id,
+    table_id,
+    start_time,
+    trim(file_name) AS file_name, 
+    trim(column_name) AS column_name, 
+    trim(column_type) AS column_type, 
+    trim(error_message) AS error_message 
+FROM sys_load_error_detail 
+ORDER BY start_time  desc
+LIMIT 10;
+````
 
 - [**`EJEMPLO 1`**](./Ejemplo-01)
 
 ---
 
 
-### 3. Postwork :memo:
+### 3. Postwork
 
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
-
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
-
-<br/>
-
-
-</div>
+- [**`POSTWORK SESIÓN 3`**](Postwork/README.md)
 
