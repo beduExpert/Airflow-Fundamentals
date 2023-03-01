@@ -4,15 +4,11 @@
 
 Estos son los requisitos de sistema disponibles en la página de Docker Desktop.
 
-Recomiendo ampliamente el uso de un equipo con 12-16 GB de RAM, ya que ejecutaremos 6 contenedores simultáneamente.
-
-![htop](assets/img/htop.png)
-
 ### Mac
 
 Su Mac debe cumplir con los siguientes requisitos para instalar Docker Desktop correctamente.
 
-[Instalar Docker Desktop en Mac](https://docs-docker-com.translate.goog/desktop/install/mac-install/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
+[Instalar Docker Desktop en Mac](https://docs-docker-com.translate.goog/desktop/install/mac-install/5_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
 
 - macOS debe ser la versión 11 o posterior. Eso es Big Sur (11), Monterey (12) o Ventura (13). Recomendamos actualizar a la última versión de macOS.
 - Al menos 4 GB de RAM.
@@ -29,7 +25,7 @@ Para instalar Docker Desktop correctamente, su host Linux debe cumplir con los s
 - Al menos 4 GB de RAM.
 - Habilite la configuración de la asignación de ID en espacios de nombres de usuario, consulte Uso compartido de archivos .
 
-[Instalar Docker Desktop en Linux](https://docs-docker-com.translate.goog/desktop/install/linux-install/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp#system-requirements)
+[Instalar Docker Desktop en Linux](https://docs-docker-com.translate.goog/desktop/install/linux-install/5_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp#system-requirements)
 
 ### Windows
 
@@ -46,7 +42,7 @@ Tu equipo Windows deberá cumplir los siguientes requerimietos para instalar Doc
     - El soporte de virtualización de hardware a nivel de BIOS debe estar habilitado en la configuración del BIOS. Para obtener más información, consulte Virtualización
 - Descargue e instale el paquete de actualización del kernel de Linux .
 
-[Instalar Docker Desktop en Windows](https://docs-docker-com.translate.goog/desktop/install/windows-install/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
+[Instalar Docker Desktop en Windows](https://docs-docker-com.translate.goog/desktop/install/windows-install/5_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
 
 ## Objetivo
 
@@ -121,12 +117,12 @@ Si no cuentas con Docker Desktop puedes seguir cualquiera de las siguientes guí
 
     |NAMES                         |STATUS|
     |-|-|
-    |airflow-airflow-triggerer-1   |Up ? minutes (healthy)|
-    |airflow-airflow-webserver-1   |Up ? minutes (healthy)|
-    |airflow-airflow-worker-1      |Up ? minutes (healthy)|
-    |airflow-airflow-scheduler-1   |Up ? minutes (healthy)|
-    |airflow-postgres-1            |Up ? minutes (healthy)|
-    |airflow-redis-1               |Up ? minutes (healthy)|
+    |airflow-airflow-triggerer-1   |Up 5 minutes (healthy)|
+    |airflow-airflow-webserver-1   |Up 5 minutes (healthy)|
+    |airflow-airflow-worker-1      |Up 5 minutes (healthy)|
+    |airflow-airflow-scheduler-1   |Up 5 minutes (healthy)|
+    |airflow-postgres-1            |Up 5 minutes (healthy)|
+    |airflow-redis-1               |Up 5 minutes (healthy)|
 
 10. Abrir un navegador web usando la siguiente dirección [http://localhost:8080](http://localhost:8080)
 11. Usar airflow como usuario y password en la página de inicio de sesión
@@ -136,7 +132,7 @@ Si no cuentas con Docker Desktop puedes seguir cualquiera de las siguientes guí
 ### Parte II. Preparar el ambiente de desarrollo
 
 1. Instalar [Visual Studio Code](https://code.visualstudio.com/download) (VS Code)
-2. Instalar [paquete de extension para Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+2. Instalar [paquete de extension para Python](https://marketplace.visualstudio.com/items5itemName=ms-python.python)
 3. Instalar modulo de airflow, de preferencia en una ambiente virtual con Python 3.10
 
     ```bash
