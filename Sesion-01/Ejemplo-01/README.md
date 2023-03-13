@@ -44,6 +44,15 @@ Tu equipo Windows deberá cumplir los siguientes requerimietos para instalar Doc
 
 [Instalar Docker Desktop en Windows](https://docs-docker-com.translate.goog/desktop/install/windows-install/5_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
 
+
+Si tienes problemas con la instalación, aquí hay unos videos que pueden ayudarte
+
+- [Install Docker on Windows 10](https://www.youtube.com/watch?v=lIkxbE_We1I&ab_channel=JamesStormes)
+- [Install Docker on Windows 10 with WSL 2](https://www.youtube.com/watch?v=h0Lwtcje-Jo&ab_channel=BeachcastsProgrammingVideos)
+- [Install Docker on Windows 11](https://youtu.be/6k1CyA5zYgg?t=249)
+
+
+
 ## Objetivo
 
 - Ejecutar Airflow de manera local
