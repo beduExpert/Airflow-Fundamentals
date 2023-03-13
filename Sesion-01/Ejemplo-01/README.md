@@ -133,6 +133,12 @@ Si no cuentas con Docker Desktop puedes seguir cualquiera de las siguientes guí
     |airflow-postgres-1            |Up 5 minutes (healthy)|
     |airflow-redis-1               |Up 5 minutes (healthy)|
 
+
+    > Si alguno de los contenedores no tiene el estado `healty`, puedes revisar los logs con `docker logs airflow-<nombre-del-contenedor>`.
+    > Trata de encontrar el error y corregirlo, reiniciar Airflow con `docker-compose down` y luego `docker-compose up` y espera a que
+    > todos los contenedores tengan el estado `healthy`
+
+
 10. Abrir un navegador web usando la siguiente dirección [http://localhost:8080](http://localhost:8080)
 11. Usar airflow como usuario y password en la página de inicio de sesión
 
