@@ -44,6 +44,15 @@ Tu equipo Windows deberá cumplir los siguientes requerimietos para instalar Doc
 
 [Instalar Docker Desktop en Windows](https://docs-docker-com.translate.goog/desktop/install/windows-install/5_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=wapp)
 
+
+Si tienes problemas con la instalación, aquí hay unos videos que pueden ayudarte
+
+- [Install Docker on Windows 10](https://www.youtube.com/watch?v=lIkxbE_We1I&ab_channel=JamesStormes)
+- [Install Docker on Windows 10 with WSL 2](https://www.youtube.com/watch?v=h0Lwtcje-Jo&ab_channel=BeachcastsProgrammingVideos)
+- [Install Docker on Windows 11](https://youtu.be/6k1CyA5zYgg?t=249)
+
+
+
 ## Objetivo
 
 - Ejecutar Airflow de manera local
@@ -123,6 +132,12 @@ Si no cuentas con Docker Desktop puedes seguir cualquiera de las siguientes guí
     |airflow-airflow-scheduler-1   |Up 5 minutes (healthy)|
     |airflow-postgres-1            |Up 5 minutes (healthy)|
     |airflow-redis-1               |Up 5 minutes (healthy)|
+
+
+    > Si alguno de los contenedores no tiene el estado `healty`, puedes revisar los logs con `docker logs airflow-<nombre-del-contenedor>`.
+    > Trata de encontrar el error y corregirlo, reiniciar Airflow con `docker-compose down` y luego `docker-compose up` y espera a que
+    > todos los contenedores tengan el estado `healthy`
+
 
 10. Abrir un navegador web usando la siguiente dirección [http://localhost:8080](http://localhost:8080)
 11. Usar airflow como usuario y password en la página de inicio de sesión
