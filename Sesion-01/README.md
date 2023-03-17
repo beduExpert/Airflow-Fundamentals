@@ -1,6 +1,5 @@
 ## Sesión 1: Introducción a Apache Airflow 🤖
 
-<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart: 
@@ -8,6 +7,7 @@
 - Instalación de Docker-Desktop
 - Ejecución de Apache Airflow usando Docker-Desktop
 - Configuración del ambiente de desarrollo con VS Code
+- Exploración de la interfaz web
 
 ### 2. Contenido :blue_book:
 
@@ -68,18 +68,25 @@ Utilizaremos VS Code durante todo el curso porque es multiplataforma y cuenta co
 
 [**Ejemplo de instalación de herramientas de desarrollo**](Sesion-01/Ejemplo-03/preparar_ambiente_de_desarrollo.md)
 
+---
 **Reto #3**
 
 Este reto consiste en instalar VS Code y crear un ambiente virtual para Python siguiendo las siguientes [instrucciones](/Sesion-01/Ejemplo-03/preparar_ambiente_de_desarrollo.md).
 
+---
 #### <ins>Tema 4. Exploración la interfaz web</ins>
 ![image](/Sesion-01/assets/img/airflow_ui.png)
- En este tema ejecutaremos un DAG de ejemplo y exploraremos las distintas vistas en la interfaz web de Airflow.
+ En este [tema](/Sesion-01/Ejemplo-04/README.md) ejecutaremos un DAG de ejemplo y exploraremos las distintas vistas en la interfaz web de Airflow.
 
-### 3. Postwork :memo:
+---
 
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+**Reto #4**
 
+La finalidad de este [reto](/Sesion-01/Reto-04/familiarizacion_con_la_interfaz_web.md
+) es que utilces las distintas vistas de DAG y ejecutes algunas de las acciones disponibles desde la interfaz de Airflow.
+
+
+---
 <br/>
 
 
