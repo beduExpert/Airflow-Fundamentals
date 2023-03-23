@@ -19,13 +19,14 @@ API = "https://api.open-meteo.com/v1/forecast?latitude=19.43&longitude=-99.13&ho
 
 
 # ① Crea una instancia del objeto DAGcon un manejador de contexto
-with DAG(
-    dag_id="ejemplo3_temperatura_task_flow",                                         # ② El nombre del DAG
-    description="Ejemplo 3. Conversion de Temperatura",                     
-    start_date=pendulum.datetime(2023, 1, 15, tz="UTC"),            # ③ La fecha en la que el DAG deberá ejecutarse por primera vez
-    schedule=None,                                                  # ④ El intervalo al que el DAG deberá ejecutarse
+@dag(
+    dag_id="s04_e01_temperatura_task_flow",
+    description="Ejemplo 3. Conversion de Temperatura",
+    start_date=pendulum.datetime(2023, 1, 15, tz="UTC"),
+    schedule=None,
     tags =['ejemplo', 'tarea de flujo']
-) as dag:
+)
+def dag():
     @task
     def obtiene_temperatura_cdmx() -> Dict[str, Union[List[str], List[float]]]:
         return requests.get(API).json()['hourly']
@@ -41,7 +42,7 @@ with DAG(
         return {k:v for k,v in temperatura.items() if k in [hoy_iso8601, futuro_iso8601]}
         
 
-    @task
+    @task(timeout=timedelta(minutes=5))
     def convierte_escala_temperatura(data: Dict[str, float]) -> Dict[str, float]:
         logging.info(data)
         return {k: (v * 1.8) + 32  for k,v in data.items() }

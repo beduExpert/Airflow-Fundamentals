@@ -14,7 +14,7 @@ En este ejemplo vamos a crear un DAG que se conecta a la API pública [Weather F
 
 1. Abrir VS Code
 2. Abrir la carpeta `airflow` como espacio de trabajo
-3. Copiar el archivo [`Sesion-02/Ejemplo-02/assets/dags/temperatura.py`](assets/dags/apod.py) al directorio de trabajo dentro de la carpeta `dags`.
+3. Copiar el archivo [`Sesion-03/Ejemplo-02/assets/dags/temperatura.py`](/Sesion-03/Ejemplo-02/assets/dags/temperatura.py) al directorio de trabajo dentro de la carpeta `dags`.
 4. Ir a la interfaz de Airflow [http://localhost:8080](localhost:8080)
 5. Seleccionar el dag `ejemplo2_temperatura` de la lista
 6. Activar el DAG
