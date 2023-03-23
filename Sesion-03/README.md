@@ -205,6 +205,8 @@ Paso 3. Convertimos las temperaturas a grados Farenheit
 ![image](Ejemplo-01/assets/img/xcom_convierte_escala_temperatura.png)
 
 
+El archivo DAG con el código completo lo encuentrás [aquí](/Sesion-03/Ejemplo-02/assets/dags/temperatura.py)  
+
 ---
 ### Tema 3. Manejo de conexiones en Airflow
 

@@ -39,7 +39,7 @@ def _convierte_escala_temperatura(ti):
 
 # ① Crea una instancia del objeto DAGcon un manejador de contexto
 with DAG(
-    dag_id="ejemplo2_temperatura",                                         # ② El nombre del DAG
+    dag_id="s03_e2_temperatura",                                         # ② El nombre del DAG
     description="Ejemplo 2. Conversion de Temperatura",                     
     start_date=pendulum.datetime(2023, 1, 15, tz="UTC"),            # ③ La fecha en la que el DAG deberá ejecutarse por primera vez
     schedule=None,                                                  # ④ El intervalo al que el DAG deberá ejecutarse
@@ -50,8 +50,8 @@ with DAG(
         python_callable=_obtiene_temperatura_cdmx
     )
 
-    filtra_dias = PythonOperator(
-        task_id ='filtra_temperatura_hoy_y_pasado',
+    filtra_temperatura_hoy_y_pasado = PythonOperator(
+        task_id ='_filtra_temperatura_hoy_y_pasado',
         python_callable=_filtra_temperatura_hoy_y_pasado
     )
 
@@ -60,4 +60,4 @@ with DAG(
         python_callable=_convierte_escala_temperatura
     )
 
-obtiene_temperatura >> filtra_dias >> convierte_escala
+obtiene_temperatura >> filtra_temperatura_hoy_y_pasado >> convierte_escala

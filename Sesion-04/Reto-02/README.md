@@ -1,15 +1,80 @@
-# Reto # - Nombre del reto
+# Reto # - Uso de Variables Airflow
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Utilizar Variables Airflow para controlar el flujo de trabajo
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Para completar este desafío deberás
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+1. Clonar el archivo DAG que usaste para resolver el [reto anterior](/Sesion-04/Reto-02/README.md)
+2. Renombrarlo e integrar la siguiente variable para controlar la lista de municipios en el DAG
+3. Usa el nombre del municipio en el nombre de la tarea
 
+```json
+    [{
+        "name": "Azcapotzalco",
+        "id": 2
+    },
+    {
+        "name": "Coyoacan",
+        "id": 3
+    },
+    {
+        "name": "Cuajimalpa De Morelos",
+        "id": 4
+    },
+    {
+        "name": "Gustavo A. Madero",
+        "id":5
+    },
+    {
+        "name": "Iztacalco",
+        "id": 6
+    },
+    {
+        "name": "Iztapalapa",
+        "id": 7
+    },
+    {
+        "name": "La Magdalena Contreras",
+        "id": 8
+    },
+    {
+        "name": "Milpa Alta",
+        "id": 9
+    },
+    {
+        "name": "Alvaro Obregon",
+        "id": 10
+    },
+    {
+        "name": "Tlahuac",
+        "id": 11
+    },
+    {
+        "name": "Tlalpan",
+        "id": 12
+    },
+    {
+        "name": "Xochimilco",
+        "id":13
+    },
+    {
+        "name": "Benito Juarez",
+        "id": 14
+    },
+    {
+        "name": "Cuauhtemoc",
+        "id": 15
+    },
+    {
+        "name": "Miguel Hidalgo",
+        "id": 16
+    },
+    {
+        "name": "Venustiano Carranza",
+        "id": 17
+    }]
+```
