@@ -325,6 +325,37 @@ Modifica el reto anterior, agregando una tarea de bifurcación padre que decidia
 
 > Por ejemplo: Si el `id` es par se ejecuta, de lo contrario se omite.
 
+#### <ins>Tema 5</ins>
+
+En ciertos escenarios es importante controlar el tiempo máximo de ejecución de una tarea, haremos uso del parametro `execution_timeout` para forzar la finalización de la misma.
+
+1. Creamos un archivo DAG y usamos el operador `BashOperator` para simular un tarea que dure 5 minutos con el comando `sleep` y establecemos el valor del parámetro `execution_time` a 2 minutos por medio `datetime.timedelta`.
+
+    > from datetime import timedelta
+
+    ```python
+    t1 = BashOperator(task_id='tarea_interminable',
+                      bash_command='sleep 300',
+                      execution_timeout=timedelta(minutes=2)
+    )
+    ```
+
+2. Activamos y ejecutamos el DAG
+3. Esperamos un par de minutos
+4. Revisamos el log de la tarea_interminable, encontrarás una excepción del tipo `AirflowTaskTimeout`
+
+    ```bash
+    ...
+    ERROR - Process timed out, PID: 31906
+    INFO - Sending SIGTERM signal to process group
+    {taskinstance.py:1768} ERROR - Task failed with exception
+    Traceback (most recent call last):
+    File "/**/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+    airflow.exceptions.AirflowTaskTimeout: Timeout, PID: 31906
+    ...
+    ```
+[s04_e06_timeout.py](/Sesion-04/Ejemplo-06/assets/dags/s04_e06_timeout.py)
 ### 3. Postwork :memo:
 
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
