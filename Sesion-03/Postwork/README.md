@@ -22,7 +22,7 @@ Con todo lo que hemos aprendido hasta el momento serás capaz de crear un DAG po
 
 ## Desarrollo
 
-Selecciona alguno de los procesos semiautomáticos que realizan en tu equipo de trabajo y automatizalo ocn Airflow de manera parcial o total.
+Selecciona alguno de los procesos semiautomáticos que realizan en tu equipo de trabajo y automatizalo con Airflow de manera parcial o total.
 
 > Puedes usar tu base de datos de desarrollo o usar una de las bases de datos de ejemplo que ofrece Amazon Redshift.
 
