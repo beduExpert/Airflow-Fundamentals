@@ -1,15 +1,23 @@
-# Reto # - Nombre del reto
+# Reto #2 - Prueba de calida a nivel columna exitosa
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Comprender el funcionamiento de las pruebas a nivel columna
+    - valores únicos
+    - valores distintos
+    - valores nulos
+    - valor mínimo
+    - valor máximo
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Modifica el ejemplo
+[s05e05_quality_check_fail.py](/Sesion-05/Ejemplo-02/assets/dags/s05e05_quality_check_fail.py), de tal forma que el resultado de la tarea se exitosa.
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+- Puedes usar otras columnas de la tabla `film`
+- Trata de mantener los 5 tipos de reglas
+- Realiza algunas consultas de exploración a la tabla para familiarizarte con sus valores
 
+
+Esta es una posible solución:
+[s05e05_quality_check_pass.py](/Sesion-05/Reto-02/dags/s05e05_quality_check_pass.py)

@@ -8,10 +8,10 @@ import pendulum
     start_date=pendulum.datetime(2023, 3, 30, tz="UTC"),
     catchup=False
 )
-def grupo_de_tareas_decoradas():
+def grupo_de_tareas_decoradas_secuencial():
     t0 = EmptyOperator(task_id='inicio')
     @task_group(group_id='grupo1')
-    def grupo_tareas_independientes():
+    def grupo_tareas():
         @task(task_id='t1')
         def task_a():
             pass
@@ -20,13 +20,10 @@ def grupo_de_tareas_decoradas():
             pass
         @task(task_id='t3')
         def task_c():
-            pass
-        # task_a()
-        # task_b()
-        # task_c()                
+            pass                
         task_c() << task_b() << task_a()
 
     t3 = EmptyOperator(task_id='fin')
-    t0 >> grupo_tareas_independientes() >> t3
+    t0 >> grupo_tareas() >> t3
 
-grupo_de_tareas_decoradas()
+grupo_de_tareas_decoradas_secuencial()
