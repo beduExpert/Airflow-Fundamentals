@@ -25,7 +25,7 @@ Este tutorial se probó en una HP 640 G2, con las siguientes características
 
 5. Haga clic en Inicio, escriba Ubuntu y haga clic para abrir el subsistema de Linux con esta distribución
 
-    ![image](img/enter_new_unix_username.png)
+    ![image](assets/img/enter_new_unix_username.png)
 
 6. Ingresa un nombre de usuario y contraseña.
 7. Actualiza los paquetes de ubuntu con el siguiente comando
@@ -69,10 +69,10 @@ Este tutorial se probó en una HP 640 G2, con las siguientes características
     - Habilitar Ubuntu
     - Click en el botón `Apply & Restart` para que los cambios tengan efecto
 
-    ![image](img/enable_wsl_docker_integration.png)
+    ![image](assets/img/enable_wsl_docker_integration.png)
 4. Abrir la app de Ubuntu
 5. Revisar la version de Docker y Docker Compose usando `docker --version` y `docker-compose --version` de manera correspondiente.
-    ![image](img/check_docker_compose_version.png)
+    ![image](assets/img/check_docker_compose_version.png)
 
 
 ## Parte III. Preparar el ambiente de desarrollo
@@ -88,7 +88,7 @@ Este tutorial se probó en una HP 640 G2, con las siguientes características
     pip install "apache-airflow[celery]==2.5.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.7.txt"
     ```
 
-![image](img/vscode_with_wsl.png)
+![image](assets/img/vscode_with_wsl.png)
 
 ## Recursos
 
