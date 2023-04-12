@@ -212,29 +212,99 @@ Es posible explorar la base de datos de postgres desde VS Code usando [PostgreSQ
 
 #### <ins>Tema 3</ins>
 
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:. Es decir, vamos a correr un dispositivo móvil virtual en nuestra computadora para simular la funcionalidad de nuestra app.
+Ahora vamos explorar un nuevo mecanismo de disparo de DAGs. Es común encontrar ambientes de airflow que son compartidos por diferentes equipos de trabajo: ingenieros, analistas y científicos de datos. En ocasiones es necesario encadenar multiples DAGs, debido a que la salida de uno se convierte en la entrada del otro.
+
+En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales tiene en cómun un conjunto de datos o "dataset".
+
+- El productor se encarga de generar el dataset y
+- el consumidor está a la espera de la creación/actualización del mimos
+
+#### Paso 1. Creamos el productor
+
+1. Importamos un la clase `Dataset`
+
+  ```python
+  from airflow import Dataset
+  ```
+
+2. Creamos una instancia de `Dataset` usando el una cadena en format URI
+
+  ```python
+  example_dataset = Dataset("s3://dataset/example.csv")
+  ```
+
+  > Nota: Aunque la URI es una referencia a un prefijo de S3, solo es una cadena, NO una conexión
+
+3. Definimos el DAG productor y una tarea bash que "actualice" el "dataset", por medio del parámetro `outlets`
 
 
-- [**`RETO 2`**](./Reto-02)
----
+  ```python
+  @dag(
+      schedule=None,
+      start_date=pendulum.datetime(2023, 3, 30, tz="UTC"),
+      catchup=False
+  )
+  def productor():
+      BashOperator(task_id="productor", 
+                  outlets=[example_dataset],
+                  bash_command="echo 'productor'")
+  ```
 
-<img src="images/chaomi.png" align="right" height="110"> 
+4. Guardamos el archivo DAG
+5. Habilitamos y ejecutamos el DAG
+6. Usamos la sección de **Datasets** en la interfaz web de Airflow para comprobar que el dataset `example_dataset` quedo registrado correctamente.
 
-#### <ins>Tema 4</ins>
 
-Basta de emulaciones, ahora veamos como funciona en el mundo real. Nuestra app, por muy sencilla que sea ya está lista para ser instalada en un dispositivo móvil y para verla en acción.
+#### Paso 2. Creamos el consumidor
 
-**Nota al Experto:**
-  
- + Recuerda que cada subtema puede contener un ejemplo, un reto, o más de un ejemplo y más de un reto. Recuerda borrar esta línea después de haberla leído.
-- [**`RETO 3`**](./Reto-03)
+1. En archivo DAG nuevo, repetimos los pasos 1-2 del que usamos para crear el productor
+2. Pasamos `example_dataset`, en forma de lista, al parámetro `schedule` del DAG.
+
+  ```python
+  @dag(
+      schedule=[example_dataset],
+      start_date=pendulum.datetime(2023, 3, 30, tz="UTC"),
+      catchup=False
+  )
+  def consumidor():
+      BashOperator(task_id='inicio',
+                  bash_command='echo "consumidor"')
+
+  consumidor()
+  ```
+
+3. Guardamos el archivo DAG
+4. En la interfaz web de Airflow, abrimos la seccion **Datasets** y comprobamos que se creo una dependencia entre el dag `productor` y el `consumidor` a través de un dataset.
+
+![image](/Sesion-05/Ejemplo-03/assets/img/example_dataset.png)
+
+
+Ahora verificamos que funcione
+
+1. Regresamos a la página principal de Airflow y disparamos el DAG `productor` desde ahí
+2. Observa el comportamiento del DAG `consumidor` una vez que la tarea que "actualiza" el dataset finalice correctamente.
+
+**Hechos**
+
+- Airflow no actualiza el archivo en sí
+- Airflow no verifica que el contenido del dataset haya cambiado
+- El archivo puede existir o no, Airflow no está conciente de eso
+- Para Airflow, el dataset es solo una cadena única que encadena los DAGs
+
+
+- [**`EJEMPLO 3.a`**](/Sesion-05/Ejemplo-03/assets/dags/s05e09_dataset_productor.py)
+- [**`EJEMPLO 3.b`**](/Sesion-05/Ejemplo-03/assets/dags/s05e10_dataset_consumidor.py)
+
+
+--
+- [**`RETO 2`**](/Sesion-05/Reto-03/README.md)
 ---
 
 ### 3. Postwork :memo:
 
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+- [**`POSTWORK SESIÓN 1`**](/Sesion-05/Postwork/README.md)
 
 <br/>
 
