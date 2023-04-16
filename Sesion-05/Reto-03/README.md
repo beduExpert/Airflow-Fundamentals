@@ -15,5 +15,3 @@ En este ejemplo tendrás que modificar el consumidor del ejemplo anterior, agreg
 2. Modificar el consumidor
 3. Ejecutar ambos productores
 4. Verificar que el consumidor se dispare unicamente después de que ambos productores hayan "actualizado" sus respectivos datasets.
-
-

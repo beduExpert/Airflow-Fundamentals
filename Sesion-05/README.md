@@ -1,4 +1,4 @@
-## Sesión 5: Nombre de sesión 🤖
+## Sesión 5: DAGs Avanzados 🤖
 
 ### 1. Objetivos :dart: 
 
@@ -77,7 +77,16 @@ Podrás encontrar los ejemplos completos en el repositorio:
 
 ---
 
-#### <ins>Tema 2</ins>
+#### <ins>Tema 2. Sensores</ins>
+
+Introduciremos el uso de un sensor de tipo HTTP para revisar que una API se encuentre activa.
+
+- [**`EJEMPLO `2**](/Sesion-05/Ejemplo-04/README.md)
+
+
+- [**`RETO 2`**](/Sesion-05/Reto-04/README.md)
+
+#### <ins>Tema 3</ins>
 
 Las pruebas de calidad son claves para el buen funcionamiento de un pipeline en un ambiente de producción, nos ayudan a validar las expectativas que tenemos sobre nuestros datos.
 
@@ -210,14 +219,14 @@ Es posible explorar la base de datos de postgres desde VS Code usando [PostgreSQ
 - [**`RETO 2`**](/Sesion-05/Reto-02/README.md)
 ---
 
-#### <ins>Tema 3</ins>
+#### <ins>Tema 4</ins>
 
 Ahora vamos explorar un nuevo mecanismo de disparo de DAGs. Es común encontrar ambientes de airflow que son compartidos por diferentes equipos de trabajo: ingenieros, analistas y científicos de datos. En ocasiones es necesario encadenar multiples DAGs, debido a que la salida de uno se convierte en la entrada del otro.
 
-En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales tiene en cómun un conjunto de datos o "dataset".
+En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales tienen en cómun un conjunto de datos o "dataset".
 
 - El productor se encarga de generar el dataset y
-- el consumidor está a la espera de la creación/actualización del mimos
+- el consumidor estará a la espera de que el dataset sea creado o actualizado
 
 #### Paso 1. Creamos el productor
 
@@ -227,15 +236,15 @@ En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales 
   from airflow import Dataset
   ```
 
-2. Creamos una instancia de `Dataset` usando el una cadena en format URI
+2. Creamos una instancia de `Dataset` usando una cadena en format URI
 
   ```python
   example_dataset = Dataset("s3://dataset/example.csv")
   ```
 
-  > Nota: Aunque la URI es una referencia a un prefijo de S3, solo es una cadena, NO una conexión
+   > Nota: En este ejemplo, aunque la URI es una referencia a un prefijo de S3, solo es una cadena y de ningún modo se trata de una conexión.
 
-3. Definimos el DAG productor y una tarea bash que "actualice" el "dataset", por medio del parámetro `outlets`
+3. Definimos el DAG productor y una tarea bash que "actualice" el "dataset" a través del parámetro `outlets`
 
 
   ```python
@@ -252,13 +261,13 @@ En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales 
 
 4. Guardamos el archivo DAG
 5. Habilitamos y ejecutamos el DAG
-6. Usamos la sección de **Datasets** en la interfaz web de Airflow para comprobar que el dataset `example_dataset` quedo registrado correctamente.
+6. Usamos la sección de **Datasets** en la interfaz web de Airflow para comprobar que el dataset `example_dataset` quedó registrado correctamente.
 
 
 #### Paso 2. Creamos el consumidor
 
-1. En archivo DAG nuevo, repetimos los pasos 1-2 del que usamos para crear el productor
-2. Pasamos `example_dataset`, en forma de lista, al parámetro `schedule` del DAG.
+1. En un nuevo archivo DAG, repetimos los pasos 1 y 2 que usamos para crear el productor
+2. Pasamos `example_dataset`, en forma de lista, al parámetro `schedule` del DAG como se muestra a continuación.
 
   ```python
   @dag(
@@ -274,7 +283,7 @@ En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales 
   ```
 
 3. Guardamos el archivo DAG
-4. En la interfaz web de Airflow, abrimos la seccion **Datasets** y comprobamos que se creo una dependencia entre el dag `productor` y el `consumidor` a través de un dataset.
+4. En la interfaz web de Airflow, abrimos la seccion **Datasets** y comprobamos que existe una dependencia entre el dag `productor` y el `consumidor` a través de un dataset.
 
 ![image](/Sesion-05/Ejemplo-03/assets/img/example_dataset.png)
 
@@ -282,24 +291,28 @@ En este emplo crearemos un par de DAGs:el productor y el consumidor, los cuales 
 Ahora verificamos que funcione
 
 1. Regresamos a la página principal de Airflow y disparamos el DAG `productor` desde ahí
-2. Observa el comportamiento del DAG `consumidor` una vez que la tarea que "actualiza" el dataset finalice correctamente.
+2. En la página principal de Airflow, observa el comportamiento del DAG `consumidor`. ¿Qué sucede una vez que la tarea que "actualiza" el dataset finaliza correctamente?
 
-**Hechos**
+
+**IMPORTANTE**
 
 - Airflow no actualiza el archivo en sí
 - Airflow no verifica que el contenido del dataset haya cambiado
 - El archivo puede existir o no, Airflow no está conciente de eso
 - Para Airflow, el dataset es solo una cadena única que encadena los DAGs
 
+Estos son los ejemplos del consumidor y productor
 
-- [**`EJEMPLO 3.a`**](/Sesion-05/Ejemplo-03/assets/dags/s05e09_dataset_productor.py)
-- [**`EJEMPLO 3.b`**](/Sesion-05/Ejemplo-03/assets/dags/s05e10_dataset_consumidor.py)
+- [**`EJEMPLO 3.a Productor`**](/Sesion-05/Ejemplo-03/assets/dags/s05e09_dataset_productor.py)
+- [**`EJEMPLO 3.b Consumidor`**](/Sesion-05/Ejemplo-03/assets/dags/s05e10_dataset_consumidor.py)
 
 
---
+En base al ejemplo anterior, serás capaz de crear una dependencia de múltiples datasets.
+
 - [**`RETO 2`**](/Sesion-05/Reto-03/README.md)
 ---
 
+--- 
 ### 3. Postwork :memo:
 
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
