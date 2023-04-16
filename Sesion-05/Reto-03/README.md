@@ -1,15 +1,17 @@
-# Reto # - Nombre del reto
+# Reto # - Datasets
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Practicar el uso de Datasets como mecanismo de dispoaro de DAGs
+* Utilizar múltiples Datasets
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+En este ejemplo tendrás que modificar el consumidor del ejemplo anterior, agregando un segundo dataset como condición de disparo.
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+![image](/Sesion-05/Reto-03/assets/img/consumidor_multiple.png)
 
+1. Deberás crear un segundo productor
+2. Modificar el consumidor
+3. Ejecutar ambos productores
+4. Verificar que el consumidor se dispare unicamente después de que ambos productores hayan "actualizado" sus respectivos datasets.
