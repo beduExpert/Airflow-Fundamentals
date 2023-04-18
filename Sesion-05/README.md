@@ -12,7 +12,7 @@ Las liberaciones recientes de Airflow, han añadido nuevas funcionalidades que m
 
 ---
 
-#### <ins>Tema 1</ins>
+#### <ins>Tema 1. Grupo de Tareas</ins>
 
 En este tema comenzaremos a utilizar los agrupadores de tareas para organizar mejor nuestros DAGs.
 
@@ -86,7 +86,7 @@ Introduciremos el uso de un sensor de tipo HTTP para revisar que una API se encu
 
 - [**`RETO 2`**](/Sesion-05/Reto-04/README.md)
 
-#### <ins>Tema 3</ins>
+#### <ins>Tema 3. Controles de calidad</ins>
 
 Las pruebas de calidad son claves para el buen funcionamiento de un pipeline en un ambiente de producción, nos ayudan a validar las expectativas que tenemos sobre nuestros datos.
 
@@ -219,7 +219,7 @@ Es posible explorar la base de datos de postgres desde VS Code usando [PostgreSQ
 - [**`RETO 2`**](/Sesion-05/Reto-02/README.md)
 ---
 
-#### <ins>Tema 4</ins>
+#### <ins>Tema 4. Datasets</ins>
 
 Ahora vamos explorar un nuevo mecanismo de disparo de DAGs. Es común encontrar ambientes de airflow que son compartidos por diferentes equipos de trabajo: ingenieros, analistas y científicos de datos. En ocasiones es necesario encadenar multiples DAGs, debido a que la salida de uno se convierte en la entrada del otro.
 
