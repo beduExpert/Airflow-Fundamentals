@@ -1,68 +1,133 @@
-## Sesión 6: Nombre de sesión 🤖
+## Sesión 6: Entornos de producción
 
-<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
-<div style="text-align: justify;">
+### 1. Objetivos 🎯 
 
-### 1. Objetivos :dart: 
+- Enviar mensajes de alerta a través de:
+    - Email
+    - Slack
+- Familiarizarse con la línea de comandos de Airflow
 
-- Reconocer el IDE Android Studio con el que desarrollan aplicaciones móviles.
-- Conocer la estructura de un proyecto android y todos los archivos generados por el IDE
+### 2. Contenido 📚
 
-### 2. Contenido :blue_book:
-
-Android Studio te ayudará a desarrollar tu app más productivamente a escala. Android Studio ofrece las herramientas más rápidas para crear apps de Android. Codifica más rápido. Codifica con seguridad. Crea el mejor código. Elimina tareas tediosas. Compila sin límites.
-
----
-
-<img src="images/tools.png" align="right" height="90"> 
-
-#### <ins>Tema 1</ins>
-
-Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, viendo el significado de los distintos campos y opciones para su configuración.
-
-- [**`EJEMPLO 1`**](./Ejemplo-01)
+En un entorno de producción, estar al tanto del estado los pipelines, sobre todo aquéllos que son recurrentes, es crucial para mantener el flujo de los datos constante y sin errores.
 
 ---
+#### <ins>Tema 1. Airflow en la nube</ins>
 
-<img src="images/structure.png" align="right" height="90"> 
+Utilizaremos la [calculadora](https://cloud.google.com/products/calculator?hl=es-419#id=0e73c2c7-ab05-4cbf-8e63-4891cb4f5055) de Google Cloud para cotizar un ambiente de Airflow.
 
-#### <ins>Tema 2</ins>
+Entre las variables más destacadas se encuentran:
 
-Una vez que el proyecto está creado, la estructura o forma en la que se organiza es de suma importancia. No sólo nos ayuda a mantener nuestro código organizado, sino que también es importante para el funcionamiento de nuestra nueva app.
+- El tipo de ambiente
+- La horas activas promedio por dia/mes
+- El número de workers y sus recursos
+- El número de planificadores (Schedulers) y sus recursos
+- El espacio de almacenamiento para el metastore
 
-- [**`EJEMPLO 2`**](./Ejemplo-02)
-- [**`RETO 1`**](./Reto-01)
+Ambiente Small en Iowa
+
+![](2023-04-24-08-41-43.png)
+
+Ambiente Medio en Iowa
+
+![](2023-04-24-08-50-42.png)
+
+> Nota: los costos varían dependiendo de la región que seleccione
+#### <ins>Tema 2. Notificaciones</ins>
+
+**Prerequisitos**
+
+
+- Servidor de correos configurado
+- Un espacio de Slack
+- Una [aplicación](https://api.slack.com/apps) de Slack con webhook entrantes habilitados.
+- Un Webhook entrante a un canal de slack existentene en el espacio de Slack.
+
+![image](/Sesion-06/Ejemplo-01/assets/img/airflow_app_basic_info.png)
+
+
+> [Aquí](https://api.slack.com/messaging/webhooks) encontrarás un excelente tutorial creado por el equipo de Slack para completar estos dos últimos pasos. 
+
+
+- [**`EJEMPLO 1. Notificaciones por correo`**](/Sesion-06/Ejemplo-01/README.md)
+- [**`EJEMPLO 2. Notificaciones por Slack`**](/Sesion-06/Ejemplo-02/README.md)
+- [**`RETO 1. Mensaje de éxito por Slack`**](/Sesion-06/Reto-01/README.md)
+
+---
+#### <ins>Tema 3. Interfaz de Línea de Comandos (CLI)</ins>
+
+![image](2023-04-23-16-10-45.png)
+
+Ahora exploraremos algunos de los comandos/sub-comandos disponibles a través de la terminal.
+Para poder ejecutar estos comandos debemos acceder a alguno de los nodos de Airflow, para ello
+
+1. Abrimos el explorador de contenedores de Docker en VS Code
+2. Hacemos click derecho sobre `airflow-airflow-scheduler-1` y seleccionamos la opción `Attach Shell`
+3. Se abrirá una nueva terminal `Containers:Shell:airflow-airflow-scheduler-1`, la cual usaremos para ejecutar nuestros comandos.
+
+- [**`EJEMPLO 3. DAGs, tareas y administración de variables`**](/Sesion-06/Ejemplo-03/README.md)
+- [**`RETO 2. Administración de conexiones`**](/Sesion-06/Reto-01/README.md)
 ---
 
-<img src="images/emulator.jpg" align="right" height="90"> 
 
-#### <ins>Tema 3</ins>
+#### <ins>Tema 4. Backfill</ins>
 
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:. Es decir, vamos a correr un dispositivo móvil virtual en nuestra computadora para simular la funcionalidad de nuestra app.
+Ya que estamos más familiarizados con la línea de comandos, utilizaremos el comando `backfill`
+para simular una carga histórica.
 
-**Nota al Experto:**
-  
- + Recuerda que cada subtema puede contener un ejemplo, un reto, o más de un ejemplo y más de un reto. Recuerda borrar esta línea después de haberla leído.
-- [**`RETO 2`**](./Reto-02)
----
+Vamos a ejecutar el dag [hola_mundo](Sesion-01/Ejemplo-02/assets/dags/hola_mundo.py) de la sesión 2.
+Este DAG utiliza un operador bash para imprimir la fecha actual.
 
-<img src="images/chaomi.png" align="right" height="110"> 
+```python
+with DAG(
+    dag_id="hola_mundo",
+    start_date=pendulum.datetime(2023, 2, 20, tz="UTC"),
+    catchup=True,
+    schedule='@daily'
+) as dag:
+    run_this = BashOperator(
+        task_id="imprime_fecha",
+        bash_command="echo $(date)"
+    )
+```
 
-#### <ins>Tema 4</ins>
+1. Ejecutamos el comando de backfill en un rango de fechas inicio y fin en formato `YYYY-MM-DD`
 
-Basta de emulaciones, ahora veamos como funciona en el mundo real. Nuestra app, por muy sencilla que sea ya está lista para ser instalada en un dispositivo móvil y para verla en acción.
+    ```bash
+    airflow dags backfill \
+    -s '2023-03-10' \
+    -e '2023-03-20' \
+    hola_mundo
+    ```
 
-**Nota al Experto:**
-  
- + Recuerda que cada subtema puede contener un ejemplo, un reto, o más de un ejemplo y más de un reto. Recuerda borrar esta línea después de haberla leído.
-- [**`RETO 3`**](./Reto-03)
----
+2. Con ayuda de la vista de cuadrícula (Grid) observamos como se ejecuta el DAG en múltiples fechas de forma simultánea
 
+3. Al revisar los logs de cada uno de las ejecuciones podemos verificar que todas las marcas del tiempo que si imprimen son del dia actual.
+
+4. Para modificar este comportamiento realizamos las siguientes modificaciones:
+    - Agregaraemos al DAG el parámetro `max_active_runs=1` para asegurar que los DAGs se ejecuten de forma sequencial, en el orden en el que se agendaron
+    - Usamos la macro predefinida `{{ ts }}` para imprimir la fecha de ejecución del DAG
+
+5. Ejecutamos nuevamente el comando backfill para el DAG con los cambios
+
+    ```bash
+    airflow dags backfill \
+    -s '2023-03-10' \
+    -e '2023-03-20' \
+    max_active_runs
+    ```
+
+6. Verificamos en la vista Grid que la ejecución sea secuencial y que las marcas de tiempo coincidan con la fecha de ejecución
+
+> Nota: para que proceso de backfill funcione como se espera los parámetros de tiempo deben estar en función de las fechas logicas de ejecución del DAG, por ejemplo: `{{ ds }}`, `{{ ds_nodash }}`, `{{ ts }}`, etc.
+
+[s06_e03_max_active_runs.py](Sesion-06/Ejemplo-04/assets/dags/s06_e03_max_active_runs.py)
+
+[**`RETO 3. Carga histórica`**](/Sesion-06/Reto-03/README.md)
 ### 3. Postwork :memo:
 
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+- [**`POSTWORK SESIÓN 1`**](/Sesion-06/Postwork/README.md)
 
 <br/>
 

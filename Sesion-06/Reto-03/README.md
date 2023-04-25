@@ -1,15 +1,14 @@
-# Reto # - Nombre del reto
+# Reto # - Carga histórica
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Utilizar el archivo DAG [apod.py](/dags/sesion02/apod.py) para realizar una carga histórica de las fotos del año anterior.
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Ejecutaremos un carga histórica de las fotos del día de la NASA, ya que queremos incluir en nuestra galaería las fotos del 2022.
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+1. Revisa el DAG y realiza los cambios necesarios para poder completar la tarea
+2. Define y ejecuta el comando correspondiente
+3. Comprueba que todas las fotos del año 2022 hayan sido descargadas
 
