@@ -1,15 +1,16 @@
-# Reto # - Nombre del reto
+# Reto # - Airflow CLI
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Utilizar la interfaz de línea de comandos para administrar conexiones de Airflow
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Realizar las siguientes tareas utilizando sólo la línea de comandos
+> Tip: Puedes apoyarte en la [hoja de ayuda](Sesion-06/Ejemplo-03/assets/cheat_sheet.md)
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
-
+1. Exportar las conexiones existentes en una archivo con nombre `mis_conexiones.json`
+2. Listar todas las conexiones existentes
+3. Eliminar una conexion
+4. Agregar una conexión
+5. Importar el archivo `mis_conexiones.json` para restaurar el estado inicial.

@@ -12,7 +12,27 @@
 En un entorno de producción, estar al tanto del estado los pipelines, sobre todo aquéllos que son recurrentes, es crucial para mantener el flujo de los datos constante y sin errores.
 
 ---
+#### <ins>Tema 1. Airflow en la nube</ins>
 
+Utilizaremos la [calculadora](https://cloud.google.com/products/calculator?hl=es-419#id=0e73c2c7-ab05-4cbf-8e63-4891cb4f5055) de Google Cloud para cotizar un ambiente de Airflow.
+
+Entre las variables más destacadas se encuentran:
+
+- El tipo de ambiente
+- La horas activas promedio por dia/mes
+- El número de workers y sus recursos
+- El número de planificadores (Schedulers) y sus recursos
+- El espacio de almacenamiento para el metastore
+
+Ambiente Small en Iowa
+
+![](2023-04-24-08-41-43.png)
+
+Ambiente Medio en Iowa
+
+![](2023-04-24-08-50-42.png)
+
+> Nota: los costos varían dependiendo de la región que seleccione
 #### <ins>Tema 2. Notificaciones</ins>
 
 **Prerequisitos**
@@ -31,7 +51,7 @@ En un entorno de producción, estar al tanto del estado los pipelines, sobre tod
 
 - [**`EJEMPLO 1. Notificaciones por correo`**](/Sesion-06/Ejemplo-01/README.md)
 - [**`EJEMPLO 2. Notificaciones por Slack`**](/Sesion-06/Ejemplo-02/README.md)
-
+- [**`RETO 1. Mensaje de éxito por Slack`**](/Sesion-06/Reto-01/README.md)
 
 ---
 #### <ins>Tema 3. Interfaz de Línea de Comandos (CLI)</ins>
@@ -45,8 +65,8 @@ Para poder ejecutar estos comandos debemos acceder a alguno de los nodos de Airf
 2. Hacemos click derecho sobre `airflow-airflow-scheduler-1` y seleccionamos la opción `Attach Shell`
 3. Se abrirá una nueva terminal `Containers:Shell:airflow-airflow-scheduler-1`, la cual usaremos para ejecutar nuestros comandos.
 
-- [**`EJEMPLO 3`**](/Sesion-06/Ejemplo-03/README.md)
-
+- [**`EJEMPLO 3. DAGs, tareas y administración de variables`**](/Sesion-06/Ejemplo-03/README.md)
+- [**`RETO 2. Administración de conexiones`**](/Sesion-06/Reto-01/README.md)
 ---
 
 
@@ -102,11 +122,12 @@ with DAG(
 > Nota: para que proceso de backfill funcione como se espera los parámetros de tiempo deben estar en función de las fechas logicas de ejecución del DAG, por ejemplo: `{{ ds }}`, `{{ ds_nodash }}`, `{{ ts }}`, etc.
 
 [s06_e03_max_active_runs.py](Sesion-06/Ejemplo-04/assets/dags/s06_e03_max_active_runs.py)
+
+[**`RETO 3. Carga histórica`**](/Sesion-06/Reto-03/README.md)
 ### 3. Postwork :memo:
 
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+- [**`POSTWORK SESIÓN 1`**](/Sesion-06/Postwork/README.md)
 
 <br/>
 
