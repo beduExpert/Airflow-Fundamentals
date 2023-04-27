@@ -8,7 +8,7 @@
 
 Crear una funcion `task_success_slack_alert` que se dispare cuando una tarea se complete de manera exitosa.
 
-1. Clon el ejemplo [s06_e02_call_back_failure.py](Sesion-06/Ejemplo-02/assets/dags/s06_e02_call_back_failure.py) y renombralo
+1. Clon el ejemplo [s06_e02_call_back_failure.py](/Sesion-06/Ejemplo-02/assets/dags/s06_e02_call_back_failure.py) y renombralo
 2. Agrega la nueva función `task_success_slack_alert`
 3. Agrega una tarea de tipo `EmptyOperator`
 4. Usa el parámetro `on_success_callback = task_success_slack_alert`

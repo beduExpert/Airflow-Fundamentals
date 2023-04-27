@@ -66,7 +66,7 @@ Para poder ejecutar estos comandos debemos acceder a alguno de los nodos de Airf
 3. Se abrirá una nueva terminal `Containers:Shell:airflow-airflow-scheduler-1`, la cual usaremos para ejecutar nuestros comandos.
 
 - [**`EJEMPLO 3. DAGs, tareas y administración de variables`**](/Sesion-06/Ejemplo-03/README.md)
-- [**`RETO 2. Administración de conexiones`**](/Sesion-06/Reto-01/README.md)
+- [**`RETO 2. Administración de conexiones`**](/Sesion-06/Reto-02/README.md)
 ---
 
 
@@ -75,7 +75,7 @@ Para poder ejecutar estos comandos debemos acceder a alguno de los nodos de Airf
 Ya que estamos más familiarizados con la línea de comandos, utilizaremos el comando `backfill`
 para simular una carga histórica.
 
-Vamos a ejecutar el dag [hola_mundo](Sesion-01/Ejemplo-02/assets/dags/hola_mundo.py) de la sesión 2.
+Vamos a ejecutar el dag [hola_mundo](/Sesion-01/Ejemplo-02/assets/dags/hola_mundo.py) de la sesión 2.
 Este DAG utiliza un operador bash para imprimir la fecha actual.
 
 ```python
@@ -121,7 +121,7 @@ with DAG(
 
 > Nota: para que proceso de backfill funcione como se espera los parámetros de tiempo deben estar en función de las fechas logicas de ejecución del DAG, por ejemplo: `{{ ds }}`, `{{ ds_nodash }}`, `{{ ts }}`, etc.
 
-[s06_e03_max_active_runs.py](Sesion-06/Ejemplo-04/assets/dags/s06_e03_max_active_runs.py)
+[s06_e03_max_active_runs.py](/Sesion-06/Ejemplo-04/assets/dags/s06_e03_max_active_runs.py)
 
 [**`RETO 3. Carga histórica`**](/Sesion-06/Reto-03/README.md)
 ### 3. Postwork :memo:
