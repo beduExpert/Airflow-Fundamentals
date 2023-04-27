@@ -62,7 +62,7 @@ Así es como se mostrará el mensaje en slack
 5. Guardamos, activamos y ejecutamos el DAG en Airflow
 6. Verificamos que el mensaje aparezcan en el canal de slack.
 
-[s06_e02_webhook_slack.py](Sesion-06/Ejemplo-02/assets/dags/s06_e02_webhook_slack.py)
+[s06_e02_webhook_slack.py](/Sesion-06/Ejemplo-02/assets/dags/s06_e02_webhook_slack.py)
 
 ### Parte II
 
