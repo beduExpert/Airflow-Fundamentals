@@ -36,7 +36,7 @@ Vamos a crear un Hook que se conecte a ElasticSearch para practicar el proceso d
 Agregaremos una tabla de tiempo que se ejecute sólo los días laborales sin incluir los días festivos.
 
 - [**`EJEMPLO 3`**](/Sesion-07/Ejemplo-03/README.md)
-- [**`RETO 3`**](Sesion-07/Reto-03/README.md)
+- [**`RETO 3`**](/Sesion-07/Reto-03/README.md)
 ---
 
 ### 3. Postwork :memo:
