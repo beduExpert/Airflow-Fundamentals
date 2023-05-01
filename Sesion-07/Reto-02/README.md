@@ -1,15 +1,14 @@
-# Reto # - Nombre del reto
+# Reto #1 - Modificar Operador Personalizado
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Familiarizarse con el proceso de creación de un nuevo operador
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+Prácticaremos el ciclo de desarrollo de un operador realizando un par de modificaciones:
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+1. Regresar el mensaje "El genero no existe en la base" cuando la consulta no regrese ninguna coincidencia
+2. Modificar la consulta original para que regrese un título de película diferente en cada ejecución.
 
+Pista: Usar función [random()](https://www.techonthenet.com/postgresql/functions/random.php) de Postgres.
