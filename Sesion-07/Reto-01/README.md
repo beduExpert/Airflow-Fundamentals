@@ -4,7 +4,7 @@
 
 * Familiarizarse con el flujo de desarrollo de plugins modificando el código
 
-![imagen](2023-04-29-15-47-32.png)
+![imagen](/Sesion-07/Reto-01/assets/img/elastic_dag.png)
 ## Desarrollo
 
 >**💡 Nota para experto(a)**

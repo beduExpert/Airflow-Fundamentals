@@ -1,16 +1,20 @@
-# Ejemplo # - Elastic Search Plugin
+# Ejemplo #1 - Elastic Search Plugin
 
 ## Objetivo
 
 * Mostrar el proceso de creación, registro y uso  de un plugin a través de un servicio externo como Elastic Search
 
+¿Qué es Elasticsearch?
 
+Elasticsearch es un motor de búsqueda y análisis de datos distribuido, diseñado para buscar, analizar y visualizar grandes volúmenes de datos en tiempo real. Sus casos de uso más comunes incluyen búsquedas de texto completo en aplicaciones web y móviles, análisis de registros y monitoreo de infraestructuras, y búsqueda y análisis de datos empresariales.
+
+https://www.youtube.com/watch?v=ehCMj7E51bs
 
 ## Preparación
 
-Vamos a ejeuctar ElasticSearch como parte del conjunto de servicios de Ariflow.
+Vamos a ejecutar ElasticSearch como parte del conjunto de servicios de Ariflow.
 
-1. Modificamos nuestro archivo docker-compose.yaml y agregaremos un servicio nuevo bajo la sección `services` como se mustra a continuación:
+1. Modificamos nuestro archivo `docker-compose.yaml` y agregaremos un servicio nuevo bajo la sección `services` como se mustra a continuación:
 
     ```yaml
     services:
@@ -24,7 +28,7 @@ Vamos a ejeuctar ElasticSearch como parte del conjunto de servicios de Ariflow.
         - 9200:9200
     ```
 
-    ![image](2023-04-29-11-14-59.png)
+    ![image](/Sesion-07/Ejemplo-01/assets/img/elastic_service_yaml.png)
 
 2. Reiniciamos los servicios de airflow
 
@@ -37,10 +41,10 @@ Vamos a ejeuctar ElasticSearch como parte del conjunto de servicios de Ariflow.
 3. Comprobamos que el nuevo servicio se ejecute correctamente
 
     ```bash
-    docker compose ps
+    docker ps
     ```
     
-    ![image](2023-04-29-11-19-38.png)
+    ![image](/Sesion-07/Ejemplo-01/assets/img/docker_ps.png)
 
     > Si expermientamos problemas de recursos, podemos incrementar la cantidad de memoria que Docker puede usar desde la aplicación de Docker, Preferences > Resources.
 
@@ -51,7 +55,7 @@ Vamos a ejeuctar ElasticSearch como parte del conjunto de servicios de Ariflow.
     - Host: elastic
     - Port: 9200
 
-    ![image](2023-04-29-11-21-41.png)
+    ![image](/Sesion-07/Ejemplo-01/assets/img/elastic_default_connection.png)
 
 
 
@@ -126,7 +130,7 @@ Creamos una archivo `elastic_hook.py` dentro de la carpeta `plugins`
 
     > Nota: En la siguiente imagen se muestran 2 plugins de tipo timetable y el hook que acabamos de agregar
 
-    ![image](2023-04-29-11-56-42.png)
+    ![image](/Sesion-07/Ejemplo-01/assets/img/cli_airflow_plugins.png)
 
 
 ### Parte II
@@ -179,5 +183,3 @@ En las siguientes enlaces encontrán las versiones finales, tanto del plugin com
 - [elastic_dag.py](/Sesion-07/Ejemplo-01/assets/dags/elastic_dag.py)
 - [elastic_hook.py](/Sesion-07/Ejemplo-01/assets/plugins/elastic_hook.py)
 
----
-[`**Reto 01**`]()
