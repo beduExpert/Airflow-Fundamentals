@@ -37,7 +37,7 @@ Vamos a crear algunos usuarios con diferentes roles para familiarizarnos con el 
 
 ### 3. Postwork :memo:
 
-- [**`POSTWORK SESIÓN 8`**](./Postwork/)
+- [**`POSTWORK SESIÓN 8`**](/Sesion-08/Postwork/README.md)
 
 <br/>
 
