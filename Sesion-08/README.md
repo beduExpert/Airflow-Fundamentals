@@ -1,61 +1,38 @@
-## Sesión 8: Nombre de sesión 🤖
+## Sesión 8: Seguridad 🤖
 
-<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
-<div style="text-align: justify;">
-
+![](2023-05-02-07-42-55.png)
 ### 1. Objetivos :dart: 
 
-- Reconocer el IDE Android Studio con el que desarrollan aplicaciones móviles.
-- Conocer la estructura de un proyecto android y todos los archivos generados por el IDE
+- Reconocer la información sensible que utilizan nuestros pipelines y las diferentes formas de resguardarla.
+- Conocer cómo funciona el control de accesos de Airflow
 
 ### 2. Contenido :blue_book:
 
-Android Studio te ayudará a desarrollar tu app más productivamente a escala. Android Studio ofrece las herramientas más rápidas para crear apps de Android. Codifica más rápido. Codifica con seguridad. Crea el mejor código. Elimina tareas tediosas. Compila sin límites.
+En esta sección nos concentraremos en las diferentes formas en las que podemos almacenar y proteger la información sensible que utilizan nuestros DAGs, por ejemplo las cadenas de conexión.
 
+#### <ins>Tema 1. Secretos de Airflow</ins>
+
+En este ejemplo utilizaremos la capa de variables de entorno para almacenar una variable y una conexión.
+
+- [**`EJEMPLO 1. Variables de entorno`**](/Sesion-08/Ejemplo-01/README.md)
+- [**`RETO 1. Crear una conexión a Postgres`**](/Sesion-08/Reto-01/README.md)
 ---
 
-<img src="images/tools.png" align="right" height="90"> 
+#### <ins>Tema 2. Manejador de Secretors Alternativo</ins>
 
-#### <ins>Tema 1</ins>
+Utilizaremos AWS Manager Secrets para almacenera y recuperar nuestras variables
 
-Se detalla como crear un proyecto android desde nuestra IDE __Android Studio__, viendo el significado de los distintos campos y opciones para su configuración.
-
-- [**`EJEMPLO 1`**](./Ejemplo-01)
-
+- [**`EJEMPLO 2. AWS Secret Manager`**](/Sesion-08/Ejemplo-02/README.md)
+- [**`RETO 1. Leer conexión desde AWS Secrets Manager`**](/Sesion-08/Reto-02/README.md)
 ---
 
-<img src="images/structure.png" align="right" height="90"> 
 
-#### <ins>Tema 2</ins>
+#### <ins>Tema 3. Control de Acceso</ins>
 
-Una vez que el proyecto está creado, la estructura o forma en la que se organiza es de suma importancia. No sólo nos ayuda a mantener nuestro código organizado, sino que también es importante para el funcionamiento de nuestra nueva app.
+Vamos a crear algunos usuarios con diferentes roles para familiarizarnos con el control de acesso.
 
-- [**`EJEMPLO 2`**](./Ejemplo-02)
-- [**`RETO 1`**](./Reto-01)
----
-
-<img src="images/emulator.jpg" align="right" height="90"> 
-
-#### <ins>Tema 3</ins>
-
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:. Es decir, vamos a correr un dispositivo móvil virtual en nuestra computadora para simular la funcionalidad de nuestra app.
-
-**Nota al Experto:**
-  
- + Recuerda que cada subtema puede contener un ejemplo, un reto, o más de un ejemplo y más de un reto. Recuerda borrar esta línea después de haberla leído.
-- [**`RETO 2`**](./Reto-02)
----
-
-<img src="images/chaomi.png" align="right" height="110"> 
-
-#### <ins>Tema 4</ins>
-
-Basta de emulaciones, ahora veamos como funciona en el mundo real. Nuestra app, por muy sencilla que sea ya está lista para ser instalada en un dispositivo móvil y para verla en acción.
-
-**Nota al Experto:**
-  
- + Recuerda que cada subtema puede contener un ejemplo, un reto, o más de un ejemplo y más de un reto. Recuerda borrar esta línea después de haberla leído.
-- [**`RETO 3`**](./Reto-03)
+- [**`EJEMPLO 3. Administración de Permisos`**](/Sesion-08/Ejemplo-03/README.md)
+- [**`RETO 3. Rol personalizado`**](/Sesion-08/Reto-03/README.md)
 ---
 
 ### 3. Postwork :memo:
