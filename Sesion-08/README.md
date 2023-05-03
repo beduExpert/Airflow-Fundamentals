@@ -1,6 +1,6 @@
 ## Sesión 8: Seguridad 🤖
 
-![](2023-05-02-07-42-55.png)
+![image](top_secret_header.png)
 ### 1. Objetivos :dart: 
 
 - Reconocer la información sensible que utilizan nuestros pipelines y las diferentes formas de resguardarla.
@@ -37,9 +37,7 @@ Vamos a crear algunos usuarios con diferentes roles para familiarizarnos con el 
 
 ### 3. Postwork :memo:
 
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
-
-- [**`POSTWORK SESIÓN 1`**](./Postwork/)
+- [**`POSTWORK SESIÓN 8`**](./Postwork/)
 
 <br/>
 

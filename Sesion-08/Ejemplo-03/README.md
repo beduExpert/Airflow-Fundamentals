@@ -6,7 +6,7 @@
 
 ## Desarrollo
 
-![image](2023-05-03-00-27-27.png)
+![image](/Sesion-08/Ejemplo-03/assets/img/list_users.png)
 
 ### Observador
 
@@ -14,7 +14,7 @@
 
 2. Hacemos click en el botón [+]
 
-    ![image](2023-05-03-00-29-26.png)
+    ![image](/Sesion-08/Ejemplo-03/assets/img/add_user.png)
 
 3. Creamos el usuario `observador`
 4. Seleccionamos el rol `Viewer`
