@@ -1,15 +1,19 @@
-# Reto # - Nombre del reto
+# Reto #2 - Leer conexión desde AWS Secrets Manager
 
 ## Objetivo
 
-* Agregar los objetivos del reto (Mínimo agregar 2 objetivos y Borrar está linea una vez se hay leido)
+* Crear un secreto para almacenar una conexión
+* Recuperar el secreto y utilizarlo en un DAG
 
 ## Desarrollo
 
->**💡 Nota para experto(a)**
->
-> Este es un ejemplo por si el experto necesita tener en cuenta un punto clave durante el reto.
->Si no es necesario, puedes borrar esta nota.
+En este reto tendrás que configurar el backend de Airflow para que busque las conexiones en AWS Secrets Manager
 
-Aquí se debe agregar eal desarrollo del reto, **NO** olvides poner el resultado del ejercicio propuesto para el feedback de los alumnos
+1. Configurar backend de Airflow
+2. Crear un nuevo secreto en AWS Secrets Manager
+3. Crear un DAG de prueba
+4. Ejecutar el DAG
+5. Actualizar el valor de la conexión
+6. Ejecutar nuevamente el DAG
 
+Tip: Puedes usar la conexión HTTP o Postgres con las que ya estas familiarizado.
