@@ -14,7 +14,7 @@ En esta sección veremos cómo extender las funcionalidades de Airflow agregando
 
 ---
 
-#### <ins>Tema 2. Hooks</ins>
+#### <ins>Tema 1. Hooks</ins>
 
 Vamos a crear un Hook que se conecte a ElasticSearch para practicar el proceso de integración de funcionalidades a Airflow.
 
@@ -23,14 +23,14 @@ Vamos a crear un Hook que se conecte a ElasticSearch para practicar el proceso d
 ---
 
 
-#### <ins>Tema 3. Operadores Personalizados</ins>
+#### <ins>Tema 2. Operadores Personalizados</ins>
 
 - [**`EJEMPLO 2`**](/Sesion-07/Ejemplo-02/README.md)
 - [**`RETO 2`**](/Sesion-07/Reto-02/README.md)
 ---
 
 
-#### <ins>Tema 4. Tablas de Tiempo</ins>
+#### <ins>Tema 3. Tablas de Tiempo</ins>
 ![](2023-05-01-12-00-06.png)
 
 Agregaremos una tabla de tiempo que se ejecute sólo los días laborales sin incluir los días festivos.

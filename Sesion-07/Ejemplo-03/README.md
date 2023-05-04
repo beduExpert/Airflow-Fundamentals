@@ -81,7 +81,7 @@
     docker compose up
     ```
 
-6. Verificamos que el plugin esta registrado
+6. Verificamos que el plugin está registrado
 
     - Nos conectamos al contendor del Scheduler en VS Code
     - Ejecutamos el comando `airflow plugins` y revisamos que `UnevenIntervalsTimetable` aparezca en la lista.
@@ -102,10 +102,10 @@
     )
     ```
 
-8. Guardamos el archivo DAG, lo activamos y esperamos a que se ejecute por si mismo
+8. Guardamos el archivo DAG, lo activamos y esperamos a que se ejecute por sí mismo
 9. Cambiamos a la vista de rejilla (Grid) y comprobamos que las ejecuciones se hallan realizado a las 06:00 y 16:30 UTC
 
-En los siguientes enlaces encontrarás las versiones finales del operador y el dag de ejemplo.
+En los siguientes enlaces encontrarás las versiones finales del operador y el DAG de ejemplo.
 
 * [uneven_intervals_timetable.py](/Sesion-07/Ejemplo-03/assets/plugins/uneven_intervals_timetable.py)
 * [ejemplo_timetable.py](Sesion-07/Ejemplo-03/assets/dags/ejemplo_timetable.py)

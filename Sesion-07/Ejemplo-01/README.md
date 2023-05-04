@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=ehCMj7E51bs
 
 Vamos a ejecutar ElasticSearch como parte del conjunto de servicios de Ariflow.
 
-1. Modificamos nuestro archivo `docker-compose.yaml` y agregaremos un servicio nuevo bajo la sección `services` como se mustra a continuación:
+1. Modificamos nuestro archivo `docker-compose.yaml` y agregaremos un servicio nuevo bajo la sección `services` como se muestra a continuación:
 
     ```yaml
     services:
@@ -121,8 +121,8 @@ Creamos una archivo `elastic_hook.py` dentro de la carpeta `plugins`
         hooks = [ElasticHook]
     ```
 
-5. Utiizamos el plugin de docker en VS Code para conectarnos al conentedor del Scheduler
-6. Una vez que estemos dentro del contendor ejectuamos el siguiente comando para verificar que nuestro plugin quedó correctamente registrado (columna `hooks`)
+5. Utilizamos el plugin de docker en VS Code para conectarnos al contenedor del Scheduler
+6. Una vez que estemos dentro del contendor ejecutamos el siguiente comando para verificar que nuestro plugin quedó correctamente registrado (columna `hooks`)
 
     ```bash
     airflow plugins
